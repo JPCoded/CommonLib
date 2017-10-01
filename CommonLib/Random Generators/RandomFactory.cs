@@ -38,7 +38,7 @@ namespace CommonLib
             {
                 max = 1;
             }
-            
+           
             return _Gen.Next(max * 100) / 100;
         }
 
@@ -62,8 +62,9 @@ namespace CommonLib
         /// <param name="min"></param>
         /// <param name="max"></param>
         /// <returns></returns>
-        public double GetRandomDbl(double min, double max) => Convert.ToDouble(
-            (_Gen.NextDouble() - 0) * (max - min) / (1 - 0) + max);
+        public double GetRandomDbl(double min, double max) => Convert.ToDouble(MathFunctions.Map((float)_Gen.NextDouble(), 0,
+            1, (float)min, (float)max));
+          
 
         /// <summary>
         /// Generates next single random between min and max
@@ -71,9 +72,9 @@ namespace CommonLib
         /// <param name="min"></param>
         /// <param name="max"></param>
         /// <returns></returns>
-        public float GetRandomSngl(double min, double max) => Convert.ToSingle(
-            (_Gen.NextDouble() - 0) * (max - min) / (1 - 0) + max);
-       
+        public float GetRandomSngl(double min, double max) => Convert.ToSingle(MathFunctions.Map((float)_Gen.NextDouble(), 0,
+            1, (float)min, (float)max));
+
         /// <summary>
         /// Generates next random color by generating 4 random integers Alpha, red, green and blue
         /// </summary>
