@@ -130,9 +130,9 @@ namespace CommonLib
         /// </summary>
         public void Randomize()
         {
-            x = (float)_RandGenerator.GetRandomDbl();
-            y = (float)_RandGenerator.GetRandomDbl();
-            z = (float)_RandGenerator.GetRandomDbl();
+            x = (float) _RandGenerator.GetRandomDbl();
+            y = (float) _RandGenerator.GetRandomDbl();
+            z = (float) _RandGenerator.GetRandomDbl();
         }
 
         /// <summary>

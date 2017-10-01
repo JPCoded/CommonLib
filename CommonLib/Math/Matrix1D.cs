@@ -593,7 +593,7 @@ namespace CommonLib
         {
             for (var I = 0; I <= _values.Length - 1; I++)
             {
-                _values[I] = _rnd.GetRandomSngl(min, max);
+                _values[I] = (float)_rnd.GetRandomSngl(min, max);
             }
         }
     }
