@@ -1,6 +1,6 @@
 ﻿namespace CommonLib
 {
-    public interface IMatrix
+    internal interface IMatrix
     {
         int Size { get; }
         Matrix1D Product(Matrix1D m2);

@@ -54,7 +54,7 @@ namespace CommonLib
         /// <param name="stop">second value</param>
         /// <param name="interpAmount">float between 0.0 and 1.0</param>
         /// <returns></returns>
-        public float Lerp(float start, float stop, float interpAmount) => start + (stop - start) * interpAmount;
+        public static float Lerp(float start, float stop, float interpAmount) => start + (stop - start) * interpAmount;
 
 
         /// <summary>
