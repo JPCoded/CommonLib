@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Security.Policy;
 
 namespace CommonLib
 {
@@ -40,6 +38,7 @@ namespace CommonLib
             {
                 max = 1;
             }
+            
             return _Gen.Next(max * 100) / 100;
         }
 
@@ -137,7 +136,19 @@ namespace CommonLib
             var GaussianRnd = Mean + StdDeviation * StdDistribution;
             return GaussianRnd;
         }
-
+        /// <summary>
+        ///  Generates values from a triangular distribution
+        ///   Triangular distribution is a continuous probability distribution with:
+        ///       lower limit a
+        ///       upper limit b 
+        ///       mode c
+        ///   where a less than b 
+        ///   c is higher than or equal a but lessthan or equal b
+        /// </summary>
+        /// <param name="min">Minimum</param>
+        /// <param name="max">Maximum</param>
+        /// <param name="mode">Mode (most frequent value)</param>
+        /// <returns></returns>
         public double NextTriangular(double min, double max, double mode)
         {
             var u = _Gen.NextDouble();
@@ -147,7 +158,10 @@ namespace CommonLib
             }
             return max - Math.Sqrt((1 - u) * (max - min) * (max - mode));
         }
-
+        /// <summary>
+        /// Shuffles a list in O(n) time by using the Fisher-Yates/Knuth algorithm
+        /// </summary>
+        /// <param name="list"></param>
         public void Shuffle(ref IList<int> list)
         {
             for (var i = 0; i < list.Count - 1; i++)
