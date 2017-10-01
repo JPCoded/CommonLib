@@ -47,7 +47,7 @@
 
 
         void ForceValues(float ForcedValue);
-        float GetValue(int Index);
+        float? GetValue(int Index);
 
         void SetValue(int Index, float Value);
         string ToString();

@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace CommonLib
 {
-    public class MathFunctions
+    internal class MathFunctions
     {
         /// <summary>
         /// Re-maps a number from one range to another. In the example above,
